@@ -1,0 +1,19 @@
+.home {
+    height: 85vh;
+    width: 100%;
+    @include createFlex(row, flex-start, center, null);
+    @media (max-device-width: 1024px) {
+        height: 50vh;
+    }
+    @media (max-device-width:1366px) and (min-device-height:1024px) and (orientation:landscape) {
+        height: 90vh;
+    }
+    @media (max-device-width:1024px) and (min-device-height:1366px) {
+        height: 78vh;
+    }
+    @media (max-device-width:767px) and (orientation:landscape) {
+        .wheatherMainItem__main-item {
+            margin-top: 255px;
+        }
+    }
+}

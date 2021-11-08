@@ -1,0 +1,143 @@
+.todo {
+    @include createFlex(row, center, center, wrap);
+    &__list-wrapper {
+        width: 35%;
+        @include todoLook();
+        @include breakpoint-down(medium) {
+            width: 90%;
+        }
+        @include breakpoint-down(small) {
+            width: 85%;
+        }
+    }
+    &__list-heading {
+        margin: 30px 0px;
+        input {
+            @include inputLook();
+            min-width: 60%;
+        }
+        button {
+            @include btnLook();
+            min-width: 30%;
+            @include breakpoint-down(medium-sm) {
+                position: relative;
+                left: -10%;
+                top: 0px;
+            }
+        }
+    }
+    &__heading-field {
+        padding-left: 40px;
+        width: 100%;
+        @include createFlex(row, center, center, null);
+    }
+    &__list {
+        min-height: 170px;
+        margin: 0px;
+        padding: 0px;
+        max-height: 250px;
+        list-style-type: none;
+        overflow-y: scroll;
+    }
+    &__btn-clear,
+    &__btn-save {
+        cursor: pointer;
+        font-weight: bold;
+        width: 100%;
+        margin: 30px 0px;
+        color: white;
+        padding: 10px;
+        background-color: rgb(111, 111, 111);
+        box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 70px inset black;
+        border: 0px;
+        &:active,
+        &:focus {
+            border: 0px;
+            outline: none;
+        }
+        &:hover {
+            box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 100px inset black;
+        }
+    }
+    &__item {
+        cursor: pointer;
+        position: relative;
+        top: 0px;
+        left: -2px;
+        @include createFlex(row, space-between, center, null);
+        @include inputLook();
+        box-shadow: 0px 0px 1px white, 0px 0px 50px inset black;
+        box-sizing: border-box;
+        min-width: 100%;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0px;
+        &:hover {
+            box-shadow: 0px 0px 1px white, 0px 0px 120px inset black;
+        }
+        svg {
+            margin-right: 5px;
+        }
+    }
+    &__item-menu {
+        position: absolute;
+        width: 140px;
+        z-index: 10;
+        top: 35px;
+        right: 10px;
+        padding: 10px 0px;
+        background-color: rgb(111, 111, 111);
+        box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 70px inset black;
+        animation: MenuFade 0.5s ease-in-out;
+        @keyframes MenuFade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        div {
+            cursor: pointer;
+            padding: 5px 10px;
+            margin: 10px 0px;
+            svg {
+                margin-right: 8px;
+            }
+            &:nth-of-type(2) {
+                svg {
+                    margin-right: 5px;
+                }
+            }
+            &:hover {
+                background-color: black;
+            }
+        }
+    }
+    &__desc {
+        width: 45%;
+        @include todoLook();
+        @include breakpoint-down(medium) {
+            width: 90%;
+            textarea {
+                width: 100%;
+            }
+        }
+        @include breakpoint-down(small) {
+            width: 85%;
+            margin-bottom: 50px;
+        }
+        h3 {
+            text-align: center;
+        }
+    }
+    &__desc-text {
+        box-sizing: border-box;
+        padding: 10px;
+        border: 0px;
+        outline: none;
+        color: white;
+        background-color: rgba(77, 77, 77, 0.637);
+        box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 50px inset black;
+    }
+}

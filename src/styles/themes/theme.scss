@@ -1,0 +1,25 @@
+/*-------------------GLOBAL----------------------*/
+
+@import '../normalize';
+@import '../variables';
+@import '../fonts';
+@import '../mixins';
+@import '../global';
+
+/*-------------------COMPONENTS------------------*/
+
+@import './components/sidebar';
+@import './components/search';
+@import './components/alert';
+@import './components/wheather-item';
+@import './components/wheather-main-item';
+@import './components/footer';
+
+/*-------------------PAGES-----------------------*/
+
+@import './pages/home';
+@import './pages/fiveDays';
+@import './pages/hourly';
+@import './pages/minutely';
+@import './pages/alerts';
+@import './pages/todo';

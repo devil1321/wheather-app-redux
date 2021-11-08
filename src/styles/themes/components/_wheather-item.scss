@@ -1,0 +1,157 @@
+.wheatherItem {
+    &__main-item-header {
+        height: 50px;
+        @include createFlex(row, flex-start, center, null);
+    }
+    &__main {
+        padding-left: 85px;
+        margin: 30px 0px;
+    }
+    &__main-item {
+        position: relative;
+        margin-top: 30px;
+        margin-left: 2.5%;
+        width: 28%;
+        padding: 30px;
+        background-color: rgba(77, 77, 77, 0.637);
+        box-shadow: 0px 0px 1px white, 0px 0px 50px black, 0px 0px 150px inset black;
+        border-radius: 10px;
+        opacity: 0;
+        transition: all 1s ease-in-out;
+        @include breakpoint-down(medium) {
+            box-sizing: border-box;
+            width: 45% !important;
+            margin: 20px 5px;
+        }
+        @include breakpoint-down(medium-sm) {
+            width: 40% !important;
+        }
+        @include breakpoint-down(small) {
+            width: 95% !important;
+        }
+        &.active {
+            animation: comesIn 1s ease-in-out forwards;
+        }
+        h1 {
+            padding: 10px;
+        }
+        h3 {
+            padding-top: 15px;
+        }
+        h1,
+        h3,
+        p {
+            color: white;
+        }
+        p {
+            font-size: pxToRem(12);
+        }
+        img {
+            position: relative;
+            top: -15px;
+            left: 0px;
+            padding-top: 20px;
+            padding-bottom: 0px;
+            display: block;
+            margin: -60px auto;
+            width: 20%;
+        }
+        @keyframes comesIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+    }
+    &__wheather {
+        margin: 10px 0px 20px;
+        h3 {
+            margin: 0px;
+        }
+        h3:nth-of-type(2) {
+            margin: 0px 10px;
+        }
+        @include createFlex(row, flex-start, center, null);
+    }
+    &__wheather-info {
+        margin-top: 10px;
+        @include createFlex(row, space-between, center, wrap);
+        p {
+            @include createFlex(row, flex-start, center, null);
+            font-size: pxToRem(11) !important;
+            font-weight: bold;
+            padding: 10px;
+            height: 30px;
+            margin: 10px 0px;
+            margin-right: 5px;
+            width: 27%;
+            background-color: rgba(255, 255, 255, 0.185);
+            box-shadow: 0px 0px 3px white;
+            @include breakpoint-down(medium-sm) {
+                width: 42%;
+            }
+        }
+    }
+    &__main-item.sm {
+        min-width: 28%;
+        padding: 15px;
+        margin: 15px 10px;
+        @media (max-device-width: 1024px) {
+            min-width: 40%;
+            margin: 15px;
+        }
+        @include breakpoint-down(medium-sm) {
+            margin: 10px;
+        }
+        img {
+            width: 50%;
+            margin: -40px auto;
+        }
+        h1 {
+            font-size: pxToRem(20);
+        }
+        h3 {
+            font-size: pxToRem(13);
+        }
+        p {
+            padding: 5px;
+            min-width: 20px;
+            font-size: pxToRem(12);
+        }
+    }
+    &__main-item-head {
+        @include createFlex(row, center, center, null);
+        img {
+            position: relative;
+            top: 0px;
+            left: 0px;
+            margin-left: -20px;
+            padding-bottom: 5px;
+            width: 30% !important;
+        }
+    }
+    &__main-item-header.sm {
+        position: relative;
+        left: -15px;
+        top: 0px;
+        h2 {
+            padding-top: 10px;
+            color: white;
+            margin: 0px 10px;
+            @include breakpoint-down(medium-sm) {
+                font-size: pxToRem(15);
+            }
+        }
+        h3 {
+            text-align: right;
+            margin-top: -3px;
+            margin-left: -5px;
+            padding-right: 30px;
+            min-width: 100%;
+        }
+    }
+}

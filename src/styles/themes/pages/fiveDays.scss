@@ -1,0 +1,8 @@
+.fiveDays {
+    max-height: 145vh;
+    @include createFlex(row, flex-start, center, wrap);
+    @include setMainItem();
+    @include breakpoint-down(small) {
+        @include setMainItemSmallAndDesktop();
+    }
+}

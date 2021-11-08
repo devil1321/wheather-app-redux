@@ -1,0 +1,101 @@
+::-webkit-scrollbar {
+    width: 3px;
+    height: 3px;
+}
+
+ ::-webkit-scrollbar-button {
+    width: 0px;
+    height: 0px;
+}
+
+ ::-webkit-scrollbar-thumb {
+    background: #e1e1e1;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+}
+
+ ::-webkit-scrollbar-thumb:active {
+    background: #ffffff;
+}
+
+ ::-webkit-scrollbar-track {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    background: #666666;
+    border: 0px none #ffffff;
+    border-radius: 50px;
+}
+
+ ::-webkit-scrollbar-track:hover {
+    background: #666666;
+}
+
+ ::-webkit-scrollbar-track:active {
+    background: #333333;
+}
+
+ ::-webkit-scrollbar-corner {
+    background: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+.app {
+    min-height: 100vh;
+    min-width: 100vw;
+    background-size: cover;
+    -webkit-transition: background-image 1s ease-in-out;
+    transition: background-image 2s ease-in-out;
+}
+
+.container {
+    min-height: 100vh;
+    @include createFlex(row, flex-start, stretch, null);
+    @media (max-width: 767px) {
+        @include createFlex(column, flex-start, flex-start, null);
+    }
+}
+
+.container-inner {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 75%;
+    min-height: 100vh;
+    padding-bottom: 50px;
+    @include breakpoint-down(medium) {
+        box-sizing: border-box;
+        padding: 30px 0px 70px;
+    }
+    @include breakpoint-down(medium-sm) {
+        box-sizing: border-box;
+        padding: 0px 0px 100px;
+    }
+    @include breakpoint-down-l(medium) {
+        min-height: 150vh;
+        padding-bottom: 100px !important;
+    }
+    @include breakpoint-down-l(medium-sm) {
+        min-height: 350vh;
+        padding-bottom: 50px !important;
+    }
+    @media (max-device-width:767px) {
+        width: 100vw;
+        padding: 0px;
+    }
+}
+
+.wheatherItem__items {
+    padding: 0px 20px;
+    margin-bottom: 20px;
+    @include createFlex(row, center, center, wrap);
+    @include breakpoint-down(medium-sm) {
+        padding: 0px;
+    }
+}

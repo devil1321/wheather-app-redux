@@ -1,0 +1,88 @@
+.sidebar {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 25%;
+    transition: all 1s ease;
+    box-shadow: 100px 0px 100px inset rgb(0, 0, 0), 0px 0px 40px black;
+    background-color: rgba(77, 77, 77, 0.637);
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+    animation: slideRight 1s ease-in-out forwards;
+    will-change: transform;
+    @include breakpoint-down(medium) {
+        width: 30%;
+    }
+    @media (max-width:767px) {
+        overflow: hidden;
+        animation: none;
+        height: 80px;
+        max-height: 80px;
+        width: 100%;
+        margin-bottom: 30px;
+        transform: translateX(0%);
+    }
+    @keyframes slideRight {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
+    }
+    &__logo {
+        margin: 20px 0px;
+        width: 50px;
+        margin-right: 15px;
+        margin-left: auto;
+        img {
+            display: block;
+            width: 100%;
+            transition: all 500ms ease-in-out;
+        }
+    }
+    &__nav-list {
+        margin: 0px;
+        padding: 0px 0px 0px 20px;
+        list-style-type: none;
+        height: 100vh;
+    }
+    &__nav-item {
+        cursor: pointer;
+        font-weight: 600;
+        margin: 15px 0px;
+        padding: 15px 20px;
+        color: white;
+        transition: all 300ms ease-in-out;
+        transform-origin: center center;
+        @include createFlex(row, flex-start, center, null);
+        @media (max-device-width: 1024px) and (max-device-height: 1366px) and (orientation: portrait) {
+            a {
+                font-size: pxToRem(16) !important;
+            }
+        }
+        @media (max-device-width:1366px) and (max-device-height:1024px) and (orientation:landscape) {
+            a {
+                font-size: pxToRem(16) !important;
+            }
+        }
+        &:first-of-type {
+            margin-top: 0px;
+        }
+        svg {
+            margin-left: auto;
+            opacity: 0;
+            transition: all 300ms ease-in-out;
+        }
+        &:hover {
+            padding-left: 30px;
+            color: ORANGE;
+            background-color: rgba(255, 255, 255, 0.247);
+            svg {
+                opacity: 1;
+                margin-right: 20px;
+            }
+        }
+    }
+}

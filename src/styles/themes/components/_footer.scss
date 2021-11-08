@@ -1,0 +1,73 @@
+.footer {
+    width: 80%;
+    padding: 5px 30px;
+    margin: 50px auto 0px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+    background-color: rgba(77, 77, 77, 0.637);
+    transform: translateY(100%) translateX(-18%);
+    box-shadow: 0px 0px 1px lightgray, 0px 0px 50px black, 0px 0px 150px inset black;
+    @include createFlex(row, space-between, center, null);
+    @keyframes slideUp {
+        0% {
+            transform: translateY(100%) translateX(-18%);
+        }
+        100% {
+            transform: translateY(0%) translateX(-18%);
+        }
+    }
+    @media (max-device-width: 1024px) and (max-device-height: 1366px) and (orientation: portrait) {
+        position: absolute;
+        bottom: 0px;
+        left: 50%;
+        max-width: 80%;
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100%) translateX(-50%);
+            }
+            100% {
+                transform: translateY(0%) translateX(-50%);
+            }
+        }
+    }
+    @media (max-device-width:1366px) and (max-device-height:1024px) and (orientation:landscape) {
+        position: absolute;
+        bottom: 0px;
+        left: 31%;
+        max-width: 60%;
+    }
+    @media (max-device-width:767px) {
+        left: 50%;
+        max-width: 100%;
+        p {
+            font-size: pxToRem(8);
+        }
+        @keyframes slideUp {
+            0% {
+                transform: translateY(100%) translateX(-50%);
+            }
+            100% {
+                transform: translateY(0%) translateX(-50%);
+            }
+        }
+    }
+    @include breakpoint-down(medium) {
+        width: 90%;
+    }
+    @include breakpoint-down-l(medium) {
+        min-width: 75%;
+        transform: translateX(-27.5%) !important;
+    }
+    @media (max-device-width:767px) and (orientation:landscape) {
+        transform: translateX(-50%) !important;
+    }
+    &.active {
+        animation: slideUp 1s ease-in-out forwards;
+    }
+    p {
+        color: white;
+    }
+    span {
+        font-weight: bold;
+    }
+}
