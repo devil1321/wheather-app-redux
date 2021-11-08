@@ -24,10 +24,10 @@ const Sidebar = () => {
                 <img src='/images/logo.svg' />
             </div>
             <ul className="sidebar__nav-list">
-                <Link to="/">
+                <Link to="/" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Current Weather Data <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
-                <Link to="/fivedays">
+                <Link to="/fivedays"  onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Wheather For 5 Days / 3 hour <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
                     {/* coming soon in pro */}
@@ -35,20 +35,20 @@ const Sidebar = () => {
                     {/* <li className="sidebar__nav-item">Climatic Forecast 30 days <FontAwesomeIcon icon={faChevronRight} /></li> */}
                     {/* <li className="sidebar__nav-item">Weather Maps 2.0 3-hour step <FontAwesomeIcon icon={faChevronRight} /></li> */}
                     {/* <li className="sidebar__nav-item">Weather Maps 2.0 1-hour step <FontAwesomeIcon icon={faChevronRight} /></li> */}
-                <Link to="/minutely">
+                <Link to="/minutely" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Minutely forecast <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
-                <Link to="/hourly">
+                <Link to="/hourly" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Hourly forecast for 48 hours <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
-                <Link to="/daily">
+                <Link to="/daily" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Daily forecast for 7 days / 48h <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
                     {/* res not return alerts */}
-                <Link to="/alerts">
+                <Link to="/alerts" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">National weather alerts <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
-                <Link to="/todo">
+                <Link to="/todo" onClick={()=>handleNavbar()}>
                     <li className="sidebar__nav-item">Your Tasks <FontAwesomeIcon icon={faChevronRight} /></li>
                 </Link>
                     {/* <li className="sidebar__nav-item">Historical weather data for the previous 5 days <FontAwesomeIcon icon={faChevronRight} /></li> */}\
