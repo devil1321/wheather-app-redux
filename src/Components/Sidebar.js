@@ -6,16 +6,18 @@ import { Link } from 'react-router-dom'
 const Sidebar = () => {
     const handleNavbar = () =>{
         const sidebar = document.querySelector('.sidebar')
-        if(sidebar.classList.contains('close') && window.innerWidth < 1366){
-            sidebar.style.maxHeight = '1250px'
-            sidebar.style.height = '1250px'
-            sidebar.classList.remove('close')
-            sidebar.classList.add('open')
-        }
-        else{
-            sidebar.style.height = '80px'
-            sidebar.classList.remove('open')
-            sidebar.classList.add('close')
+        if(window.innerWidth < 1024){
+            if(sidebar.classList.contains('close') && window.innerWidth < 1366){
+                sidebar.style.maxHeight = '1250px'
+                sidebar.style.height = '1250px'
+                sidebar.classList.remove('close')
+                sidebar.classList.add('open')
+            }
+            else{
+                sidebar.style.height = '80px'
+                sidebar.classList.remove('open')
+                sidebar.classList.add('close')
+            }
         }
     }
     return (
